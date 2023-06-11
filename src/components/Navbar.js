@@ -1,11 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Navbar() {
+function Navbar(props) {
     return (
-        <Nav>
+        <Nav className={props.darkMode ? 'dark' : ''}>
+        {/* // <Nav className='dark'> */}
             <img src="images/logo.svg" alt='logo' />
             <h2>ReactFacts</h2>
+            <div className='toggler'>
+                <p className='toggler--light'>Light</p>
+                <div className='toggler--slider' onClick={props.toggleDarkMode}>
+                    <div className='toggler--slider--circle'></div>
+                </div>
+                <p className='toggler--dark'>Dark</p>
+            </div>
         </Nav>
     )
 }
@@ -20,6 +28,7 @@ const Nav = styled.nav`
     }
     h2{
         color: #61DAFB;
+        margin-right: auto;
     }
 `;
 

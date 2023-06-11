@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Main() {
+function Main(props) {
     return (
-        <Container>
+        <Container className={props.darkMode ? 'dark' : ''}>
             <h1>Fun facts about React</h1>
             <ul>
                 <li>Was first released in 2013</li>
@@ -16,7 +16,8 @@ function Main() {
     )
 }
 
-const Container = styled.div`
+const Container = styled.main`
+    background-color: white;
     color: #2B283A;
     padding: 57px 27px;
     
